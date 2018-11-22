@@ -1,28 +1,30 @@
 package ru.itpark;
 
 public class SportmasterBonusService {
-    public int calculateBonus (int totalAmount, int purchaseAmount) {
-        int result ;
-        int blueCardBonuceThousand=50;
-        int silverCardBonuceThousand=70;
-        int goldCardBonuceThousand=100;
-        int blueCardMinLevel=1;
-        int blueCardMaxLevel=15_000;
-        int silverCardMinLevel=15_001;
-        int silverCardMaxLevel=150_000;
-        int purchaseDevidedThousand=purchaseAmount/1_000;
+    public int calculateBonus(int totalAmount, int purchaseAmount) {
+        int result;
+        int blueCardBonus = 50;
+        int silverCardBonus = 70;
+        int goldCardBonus = 100;
+        int blueCardMinLevel = 1;
+        int blueCardMaxLevel = 15_000;
+        int silverCardMinLevel = 15_001;
+        int silverCardMaxLevel = 150_000;
+        int thousand = 1_000;
+
+        int purchaseDevideThousand = purchaseAmount / thousand;
 
         if (totalAmount >= blueCardMinLevel && totalAmount <= blueCardMaxLevel) {
-            result=blueCardBonuceThousand*purchaseDevidedThousand; // blue card
+            result = blueCardBonus * purchaseDevideThousand;
 
         } else if (totalAmount >= silverCardMinLevel && totalAmount <= silverCardMaxLevel) {
-            result=silverCardBonuceThousand*purchaseDevidedThousand; // silver card
+            result = silverCardBonus * purchaseDevideThousand;
 
         } else {
-            result=goldCardBonuceThousand*purchaseDevidedThousand; //gold card
+            result = goldCardBonus * purchaseDevideThousand;
 
         }
-        return  result;
+        return result;
 
     }
 
