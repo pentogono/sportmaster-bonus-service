@@ -6,7 +6,7 @@ public class SportmasterBonusService {
         int blueCardBonus = 50;
         int silverCardBonus = 70;
         int goldCardBonus = 100;
-        int blueCardMinLevel = 1;
+        int blueCardMinLevel = 0;
         int blueCardMaxLevel = 15_000;
         int silverCardMinLevel = 15_001;
         int silverCardMaxLevel = 150_000;
@@ -15,16 +15,16 @@ public class SportmasterBonusService {
         int purchaseDevideThousand = purchaseAmount / thousand;
 
         if (totalAmount >= blueCardMinLevel && totalAmount <= blueCardMaxLevel) {
-            result = blueCardBonus * purchaseDevideThousand;
+            return blueCardBonus * purchaseDevideThousand;
 
         } else if (totalAmount >= silverCardMinLevel && totalAmount <= silverCardMaxLevel) {
-            result = silverCardBonus * purchaseDevideThousand;
+            return silverCardBonus * purchaseDevideThousand;
 
         } else {
-            result = goldCardBonus * purchaseDevideThousand;
+            return goldCardBonus * purchaseDevideThousand;
 
         }
-        return result;
+
 
     }
 

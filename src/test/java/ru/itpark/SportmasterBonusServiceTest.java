@@ -26,5 +26,11 @@ class SportmasterBonusServiceTest {
             int sportmasterBonus = service.calculateBonus(177_000, 9562);
             assertEquals(900, sportmasterBonus);
         }
+
+        {
+            SportmasterBonusService service = new SportmasterBonusService();
+            int sportmasterBonus = service.calculateBonus(0, 1_000);
+            assertEquals(50, sportmasterBonus);
+        }
     }
 }
