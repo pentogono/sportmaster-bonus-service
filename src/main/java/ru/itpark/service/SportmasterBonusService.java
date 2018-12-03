@@ -1,8 +1,8 @@
-package ru.itpark;
+package ru.itpark.service;
 
 public class SportmasterBonusService {
     public int calculateBonus(int totalAmount, int purchaseAmount) {
-        int result;
+
         int blueCardBonus = 50;
         int silverCardBonus = 70;
         int goldCardBonus = 100;
@@ -17,15 +17,12 @@ public class SportmasterBonusService {
         if (totalAmount >= blueCardMinLevel && totalAmount <= blueCardMaxLevel) {
             return blueCardBonus * purchaseDevideThousand;
 
-        } else if (totalAmount >= silverCardMinLevel && totalAmount <= silverCardMaxLevel) {
+        }
+        if (totalAmount >= silverCardMinLevel && totalAmount <= silverCardMaxLevel) {
             return silverCardBonus * purchaseDevideThousand;
 
-        } else {
-            return goldCardBonus * purchaseDevideThousand;
-
         }
-
-
+        return goldCardBonus * purchaseDevideThousand;
     }
 
 }
